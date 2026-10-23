@@ -129,7 +129,7 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 // Full match — paste the exact YouTube watch link or 11-character video ID after uploading.
 // Example (format only): https://www.youtube.com/watch?v=XXXXXXXXXXX
 // Leave blank until the recording is available on YouTube. No large video file is stored here.
-const FULL_MATCH_YOUTUBE_URL = '';
+const FULL_MATCH_YOUTUBE_URL = 'https://youtu.be/WBRhlwIuE2M';
 
 function getYouTubeVideoId(input) {
   if (!input || !input.trim()) return null;
