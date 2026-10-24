@@ -219,5 +219,562 @@
 
     <footer class="site-footer"><div class="content-width footer-inner"><a class="footer-brand" href="#top">ZYVRAXO<span>.</span></a><p>© <span id="copyright-year">2026</span> Zyvraxo. Independent fan and creator site. Not affiliated with or endorsed by Epic Games or TikTok.</p><a class="footer-back" href="#top">BACK TO TOP ↑</a></div></footer>
   </div>
+
+<!-- ZYVRAXO: Website content and branding update -->
+<style>
+  :root {
+    --gold: #ffe45c;
+  }
+
+  .brand-name, .footer-brand {
+    color: #fff;
+    text-shadow: 0 0 14px rgba(169, 111, 255, .22);
+  }
+
+  .brand-dot, .footer-brand span {
+    color: #ffe45c;
+  }
+
+  .hero-logo {
+    filter:
+      drop-shadow(0 18px 45px rgba(76, 27, 154, .45))
+      drop-shadow(0 0 18px rgba(255, 228, 92, .18));
+  }
+
+  .zy-logo-fallback {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    font: 900 clamp(43px, 5.5vw, 82px)/1 Impact,
+      "Arial Black", sans-serif;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 4px 5px 0 #6829aa,
+      0 0 35px rgba(149, 78, 255, .65);
+    overflow-wrap: anywhere;
+  }
+
+  .zy-logo-fallback span { color: #ffe45c; }
+
+  .zy-mini-logo {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    color: #ffe45c;
+    background: linear-gradient(145deg, #5525a6, #151027);
+    border: 2px solid #a66bff;
+    font: 900 30px Impact, sans-serif;
+  }
+
+  .zy-asset-fallback {
+    background: radial-gradient(
+      circle at 65% 45%,
+      rgba(131, 70, 228, .48),
+      rgba(12, 17, 39, .95) 75%
+    ) !important;
+  }
+
+  /* New content library, using the existing website colours */
+  .zy-library {
+    background: linear-gradient(180deg, #101021, #0b0b18);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .zy-library-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+
+  .zy-library h2 {
+    font: 900 clamp(48px, 6vw, 80px)/1.03 Impact,
+      "Arial Black", sans-serif;
+    margin: 0;
+  }
+
+  .zy-library h2 em {
+    color: var(--violet);
+    font-style: normal;
+  }
+
+  .zy-library-intro p {
+    max-width: 340px;
+    color: #b9b2d0;
+    line-height: 1.8;
+  }
+
+  .zy-library-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .zy-library-card {
+    min-width: 0;
+    min-height: 285px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #35204e, #151426);
+    border: 1px solid #544071;
+    transition: transform .2s, border-color .2s;
+  }
+
+  .zy-library-card:nth-child(2) {
+    background: linear-gradient(145deg, #12424b, #151426);
+  }
+
+  .zy-library-card:nth-child(3) {
+    background: linear-gradient(145deg, #422244, #151426);
+  }
+
+  .zy-library-card:nth-child(4) {
+    background: linear-gradient(145deg, #45371e, #151426);
+  }
+
+  .zy-library-card:hover {
+    border-color: #ffe45c;
+    transform: translateY(-4px);
+  }
+
+  .zy-library-number {
+    font: 900 48px/1 Impact, sans-serif;
+    color: #d7b7ff;
+    margin-bottom: auto;
+  }
+
+  .zy-library-card h3 {
+    font: 900 28px/1.1 Impact, sans-serif;
+    margin: 22px 0 11px;
+  }
+
+  .zy-library-card p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #c2bbd2;
+    margin-bottom: 22px;
+  }
+
+  .zy-library-card a {
+    align-self: flex-start;
+    margin-top: auto;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffe45c;
+    border-bottom: 1px solid #9670d7;
+    padding-bottom: 7px;
+  }
+
+  /* Additional full-match card */
+  .zy-day02 {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    border: 1px solid #4e3d76;
+    margin-top: 18px;
+    background: #17132b;
+  }
+
+  .zy-day02-art {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 38px;
+    background:
+      radial-gradient(circle at 78% 40%, #6430aa, transparent 60%),
+      linear-gradient(125deg, #182b49, #1a0e37);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zy-day02-art::after {
+    content: "02";
+    position: absolute;
+    right: -12px;
+    bottom: -65px;
+    font: 900 260px/1 Impact, sans-serif;
+    color: rgba(255, 255, 255, .055);
+    pointer-events: none;
+  }
+
+  .zy-day02-art small {
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
+
+  .zy-day02-art strong {
+    font: 900 clamp(45px, 5vw, 75px)/.95 Impact,
+      sans-serif;
+    margin: 22px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .zy-day02-art strong em {
+    font-style: normal;
+    color: #ffe45c;
+  }
+
+  .zy-day02-info {
+    padding: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .zy-day02-info h3 {
+    font: 900 42px/1.05 Impact, sans-serif;
+    margin: 0 0 18px;
+  }
+
+  .zy-day02-info p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #bcb4d2;
+  }
+
+  .zy-day02-info a {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 900;
+    color: #ffe45c;
+    border-bottom: 1px solid var(--violet);
+    padding-bottom: 9px;
+  }
+
+  .zy-small-status {
+    color: var(--cyan);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 17px;
+  }
+
+  @media (max-width: 900px) {
+    .zy-library-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .zy-day02 {
+      grid-template-columns: 1fr;
+    }
+    .zy-day02-art {
+      min-height: 240px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .zy-library-intro {
+      display: block;
+    }
+    .zy-library-intro p {
+      margin-top: 18px;
+    }
+    .zy-library-grid {
+      grid-template-columns: 1fr;
+    }
+    .zy-library-card {
+      min-height: 210px;
+    }
+    .zy-day02-art,
+    .zy-day02-info {
+      padding: 26px;
+    }
+    .zy-day02-art strong {
+      font-size: 53px;
+    }
+    .zy-day02-info h3 {
+      font-size: 36px;
+    }
+  }
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  // Avoid duplicating content if the update is accidentally added twice.
+  if (document.getElementById('creator-library')) return;
+
+  const find = selector => document.querySelector(selector);
+
+  function text(selector, value) {
+    const element = find(selector);
+    if (element) element.textContent = value;
+  }
+
+  document.title = 'Zyvraxo — Fortnite Journey | Gameplay & Tips';
+
+  const meta = find('meta[name="description"]');
+  if (meta) {
+    meta.content = 'Follow Zyvraxo through two Fortnite victories, full gameplay, highlights, beginner tips and character progression.';
+  }
+
+  // Update the existing homepage without rebuilding its layout.
+  text('.hero-outlined', 'TWO');
+  text('.hero-gold', 'WINS.');
+
+  const introduction = find('.hero-intro');
+  if (introduction) {
+    introduction.innerHTML =
+      'A fresh Fortnite account. Two recorded matches. ' +
+      '<strong>Two Victory Royales.</strong> ' +
+      'The journey continues through gameplay, highlights and beginner tips.';
+  }
+
+  const heroNumbers = document.querySelectorAll('.hero-meta .meta-num');
+  const heroLabels = document.querySelectorAll('.hero-meta .meta-label');
+
+  ['02', '02', '04'].forEach((value, index) => {
+    if (heroNumbers[index]) heroNumbers[index].textContent = value;
+  });
+
+  ['MATCHES RECORDED', 'VICTORY ROYALES', 'CONTENT SERIES']
+    .forEach((value, index) => {
+      if (heroLabels[index]) heroLabels[index].textContent = value;
+    });
+
+  text('.hero-update strong', 'THE JOURNEY CONTINUES');
+  text('.hero-update small', 'TWO RECORDED VICTORIES');
+
+  const storyParagraphs = document.querySelectorAll('.story-content p');
+  if (storyParagraphs[1]) {
+    storyParagraphs[1].textContent =
+      'The first recorded Solo Build match ended in a Victory Royale. ' +
+      'The second recorded match ended in another win. ' +
+      'The journey now includes gameplay highlights, useful lessons ' +
+      'and everything that happens between matches.';
+  }
+
+  const episodesHeading = find('.episodes-heading h2');
+  if (episodesHeading) {
+    episodesHeading.innerHTML =
+      'THE JOURNEY.<br><em>NOW EXPANDING.</em>';
+  }
+
+  const episodesIntro = find('.episodes-heading p');
+  if (episodesIntro) {
+    episodesIntro.textContent =
+      'Explore the original TikTok chapters, match highlights and ' +
+      'the growing Zyvraxo content library.';
+  }
+
+  text('.live-total', 'THE ORIGINAL POSTS');
+
+  // Update the fourth interactive chapter to reflect Day 02.
+  if (typeof chapters !== 'undefined' && chapters[3]) {
+    chapters[3].title = 'THE SECOND VICTORY';
+    chapters[3].description =
+      'The second recorded Fortnite match ended in another ' +
+      'Victory Royale. The full recording and highlights are ' +
+      'being added to the Zyvraxo archive.';
+    chapters[3].status = 'DAY 02 · RECORDED';
+    chapters[3].image = 'assets/fortnite-mode.webp';
+    chapters[3].alt =
+      'Fortnite artwork representing the second recorded match';
+    chapters[3].published = false;
+  }
+
+  const fourthTab = document.querySelector(
+    '.chapter-tab[data-chapter="3"]'
+  );
+
+  if (fourthTab) {
+    const heading = fourthTab.querySelector('strong');
+    const subtitle = fourthTab.querySelector('small');
+
+    if (heading) heading.textContent = 'THE SECOND VICTORY';
+    if (subtitle) subtitle.textContent = 'DAY 02 / RECORDED';
+
+    fourthTab.addEventListener('click', function () {
+      const note = find('#chapter-footnote');
+      if (note) {
+        note.textContent =
+          'The match is recorded. Direct video links will be ' +
+          'connected as they become available.';
+      }
+    });
+  }
+
+  // Keep the original player and acknowledge both full matches.
+  const fullHeading = find('#full-match-title');
+  if (fullHeading) {
+    fullHeading.innerHTML = 'FULL<br><em>MATCH ARCHIVE.</em>';
+  }
+
+  text(
+    '.full-match-lead p',
+    'Watch the complete first match on YouTube. The second ' +
+    'recorded match will join the archive when its direct link is available.'
+  );
+
+  text(
+    '.full-match-note',
+    'Full recordings play from YouTube. Large video files are ' +
+    'not stored in this GitHub Pages repository.'
+  );
+
+  // A new creator-library section using the site's existing structure.
+  const library = document.createElement('section');
+  library.id = 'creator-library';
+  library.className = 'zy-library section-pad';
+  library.setAttribute('aria-labelledby', 'zy-library-title');
+
+  library.innerHTML = `
+    <div class="content-width">
+      <div class="zy-library-intro">
+        <div>
+          <div class="section-label">THE ZYVRAXO LIBRARY</div>
+          <h2 id="zy-library-title">MORE THAN <em>WINS.</em></h2>
+        </div>
+        <p>
+          Full matches, exciting highlights, useful beginner lessons
+          and character progression — all part of the journey.
+        </p>
+      </div>
+
+      <div class="zy-library-grid">
+        <article class="zy-library-card">
+          <span class="zy-library-number">01 /</span>
+          <h3>BEST BATTLES</h3>
+          <p>Memorable eliminations, close encounters and the
+          moments leading to Victory Royale.</p>
+          <a href="https://www.tiktok.com/@zyvraxo.gg"
+             target="_blank" rel="noopener noreferrer">
+            VISIT TIKTOK ↗
+          </a>
+        </article>
+
+        <article class="zy-library-card">
+          <span class="zy-library-number">02 /</span>
+          <h3>BEGINNER TIPS</h3>
+          <p>Looting, shields, storm awareness, cover,
+          movement abilities and high ground.</p>
+          <a href="https://www.tiktok.com/@zyvraxo.gg"
+             target="_blank" rel="noopener noreferrer">
+            VISIT TIKTOK ↗
+          </a>
+        </article>
+
+        <article class="zy-library-card">
+          <span class="zy-library-number">03 /</span>
+          <h3>BEYOND THE MATCH</h3>
+          <p>Exploring rewards, Locker customisation,
+          outfits, emotes and character progression.</p>
+          <a href="https://www.tiktok.com/@zyvraxo.gg"
+             target="_blank" rel="noopener noreferrer">
+            VISIT TIKTOK ↗
+          </a>
+        </article>
+
+        <article class="zy-library-card">
+          <span class="zy-library-number">04 /</span>
+          <h3>FULL GAMEPLAY</h3>
+          <p>Complete Fortnite Battle Royale matches,
+          from the opening drop to the final result.</p>
+          <a href="https://www.youtube.com/@ZyvraxoLive"
+             target="_blank" rel="noopener noreferrer">
+            VISIT YOUTUBE ↗
+          </a>
+        </article>
+      </div>
+    </div>`;
+
+  const episodes = find('#episodes');
+  if (episodes) {
+    episodes.insertAdjacentElement('afterend', library);
+  }
+
+  // Day 02 is recorded, but its individual YouTube ID is not yet known.
+  const secondMatch = document.createElement('article');
+  secondMatch.className = 'zy-day02';
+
+  secondMatch.innerHTML = `
+    <div class="zy-day02-art">
+      <small>FORTNITE JOURNEY / DAY 02</small>
+      <strong>ANOTHER<br><em>VICTORY.</em></strong>
+      <small>16:41 · COMPLETE RECORDING</small>
+    </div>
+
+    <div class="zy-day02-info">
+      <div class="zy-small-status">● SECOND MATCH RECORDED</div>
+      <h3>THE STORY CONTINUES.</h3>
+      <p>
+        The second recorded match ended in another Victory Royale.
+        The full-length YouTube video will be connected here once
+        its direct link is available.
+      </p>
+      <a href="https://www.youtube.com/@ZyvraxoLive"
+         target="_blank" rel="noopener noreferrer">
+        VISIT ZYVRAXO ON YOUTUBE ↗
+      </a>
+    </div>`;
+
+  const firstMatch = find('#full-match .full-match-frame');
+  if (firstMatch) {
+    firstMatch.insertAdjacentElement('afterend', secondMatch);
+  }
+
+  // Add Series to the original navigation.
+  const navigation = find('#primary-nav');
+  if (navigation) {
+    const seriesLink = document.createElement('a');
+    seriesLink.href = '#creator-library';
+    seriesLink.textContent = 'Series';
+
+    const fullMatchLink = navigation.querySelector(
+      'a[href="#full-match"]'
+    );
+
+    navigation.insertBefore(seriesLink, fullMatchLink);
+
+    seriesLink.addEventListener('click', function () {
+      navigation.classList.remove('is-open');
+      const toggle = find('.menu-toggle');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+  }
+
+  // Restore readable fallback branding if original assets are missing.
+  document.querySelectorAll('img[src^="assets/"]').forEach(img => {
+    function handleMissingImage() {
+      img.hidden = true;
+
+      if (img.classList.contains('hero-logo')) {
+        const fallback = document.createElement('div');
+        fallback.className = 'zy-logo-fallback';
+        fallback.innerHTML = '<span>Z</span>YVRAXO';
+        img.insertAdjacentElement('afterend', fallback);
+      } else if (img.closest('.brand-icon')) {
+        const fallback = document.createElement('span');
+        fallback.className = 'zy-mini-logo';
+        fallback.textContent = 'Z';
+        img.insertAdjacentElement('afterend', fallback);
+      } else if (img.parentElement) {
+        img.parentElement.classList.add('zy-asset-fallback');
+      }
+    }
+
+    if (img.complete && img.naturalWidth === 0) {
+      handleMissingImage();
+    } else {
+      img.addEventListener('error', handleMissingImage, {
+        once: true
+      });
+    }
+  });
+});
+</script>
+<!-- END ZYVRAXO UPDATE -->
 </body>
 </html>
