@@ -1,61 +1,56 @@
-# ZYVRAXO — Website Version 3
+# Zyvraxo — website repaired (October 2026)
 
-A standalone, responsive one-page gaming website, built from the approved Zyvraxo V2 design. This edition adds a **Full Gameplay** section for the user's 18-minute 32-second Fortnite first-match recording.
+This is a **complete replacement** of the website source, not another snippet to append to the old HTML. It retains the approved original dark-purple gaming look and the original Zyvraxo logo.
 
-## Quick start — no software installation required
+## What was fixed
 
-1. Extract the ZIP file.
-2. Open the nested `zyvraxo-website` folder.
-3. Double-click `index.html` to see the website in Chrome or Edge.
-4. When ready, follow **GITHUB-SETUP.md** to publish on GitHub Pages (free public hosting).
+- Restored the original Zyvraxo logo, favicon, and missing gameplay screenshots.
+- Added the linked footer credit: **Website designed and developed by Bolgsvenia Global**.
+- Added genuine Day 02 Victory Royale image extracted from the recorded match.
+- Removed the duplicate chapter viewer and previously injected 560-line patch.
+- Put styles in `styles.css` and interactions in `script.js`.
+- Reduced oversize headings and excess vertical spacing; made video sections uniform.
+- Kept the correct YouTube Day 01 embed, loaded only after a click.
+- Created a separate Day 02 card; no fabricated video URL.
+- Organised short-form series into Best Battles, Beginner Tips and Beyond the Match.
+- Fixed responsive layout, navigation accessibility, image aspect ratios, link labels and reduced-motion support.
+- Retained FX control; stopped it from being merely decorative.
 
-Everything is regular HTML, CSS and JavaScript. No npm, build tools, fonts, trackers or paid hosting is needed.
+## Publishing with GitHub's website (no command line necessary)
 
-## Current state — accurate as of 23 October 2026
+1. **Keep a backup.** In GitHub, open the repository and choose **Code → Download ZIP** before making changes.
+2. Extract `zyvraxo-website-fixed.zip` on your PC.
+3. Open `https://github.com/bolgsven/zyvraxo-website` and switch to the `main` branch.
+4. Select **Add file → Upload files**. Drag **the contents of the extracted `zyvraxo-website-fixed` folder** — including `index.html`, `styles.css`, `script.js`, and the `assets` directory — into the upload area. Do **not** drag the parent folder as an extra directory level. GitHub will detect the changed files. If your browser does not accept folders, upload the three root files first, then upload the image files separately inside `assets`.
+5. Use commit message: `Repair Zyvraxo website layout, media and responsive design`.
+6. Wait until the deployment in **Actions** or **Settings → Pages** has finished, then refresh `https://bolgsven.github.io/zyvraxo-website/` with Ctrl+Shift+R.
 
-- First Victory Royale TikTok highlight: **published**, 19 October 2026.
-- The Journey Part 01: **published**, 23 October 2026.
-- The Journey Part 02: **published**, 23 October 2026.
-- Additional chapter: **upcoming**.
-- Full first-match YouTube video: **not yet uploaded or linked**. A branded poster is displayed instead of an invented video or broken player.
-- TikTok posts link to the confirmed profile **https://www.tiktok.com/@zyvraxo.gg** until their direct URLs are provided.
-- No live website has been deployed from this package yet.
+### Day 02 direct video link
 
-## Connect the full-length gameplay video to YouTube
+YouTube's Day 02 direct watch URL was not provided. To set it later, open `script.js` and change this single line:
 
-**Do not upload the 18-minute MP4 into the GitHub repository.** GitHub Pages should host the webpage, not large videos.
+```js
+const DAY_02_YOUTUBE_URL = '';
+```
 
-1. On YouTube, create or use the Zyvraxo channel. Verify your account to enable uploads longer than 15 minutes (YouTube may vary requirements).
-2. Upload your 18:32 gameplay video. Choose **Public** or **Unlisted**. Make sure YouTube allows embedding for the upload. Review all audio rights; permission on TikTok does not necessarily extend to YouTube.
-3. Copy the YouTube video URL, e.g. `https://www.youtube.com/watch?v=XXXXXXXXXXX` (example only; not a real video).
-4. Open **`script.js`** in Notepad/VS Code and find the line near the bottom:
+to the confirmed URL, e.g.:
 
-   `const FULL_MATCH_YOUTUBE_URL = '';`
+```js
+const DAY_02_YOUTUBE_URL = 'https://youtu.be/ACTUAL_ID_HERE';
+```
 
-5. Paste the real YouTube URL between the quotes:
+(The example isn't a real URL; use the actual Day 02 YouTube video link.)
 
-   `const FULL_MATCH_YOUTUBE_URL = 'https://www.youtube.com/watch?v=YOUR_REAL_VIDEO_ID';`
+### TikTok short links
 
-6. Save `script.js` and refresh the website. The 'coming soon' poster becomes an active **Watch the full match** button. The video is embedded only after a visitor clicks, for faster loading and reduced third-party requests.
-7. If GitHub Pages is already live, upload/commit the updated `script.js` to the repository as well. Your player will work as soon as the YouTube upload is viewable and permits embedding.
+Series currently link to `@zyvraxo.gg`, not to invented individual TikTok posts. To link to a specific video, replace the corresponding anchor `href` in `index.html` after obtaining the exact video URL.
 
-**Testing note:** YouTube requires a proper HTTP referrer for embedded playback. The local `file://` preview may show a YouTube playback error even with a valid video ID; test the player on your published HTTPS GitHub Pages site. The site already sets an appropriate iframe referrer policy.
+## Files
 
-Do not add a fake YouTube link. If the URL is blank or invalid, the site will continue showing the truthful coming-soon state.
+- `index.html` — complete clean semantic HTML (no inline patch)
+- `styles.css` — all visual styles and mobile breakpoints
+- `script.js` — navigation, FX control, Day 01 play button and optional Day 02 link
+- `assets/` — original logo, favicon, Fortnite images and new video screenshot stills
+- `.nojekyll` — GitHub Pages static hosting configuration
 
-## Website structure
-
-- `index.html` — home, story, published TikToks, interactive chapters, new full-gameplay feature, loadout, about, follow and footer.
-- `styles.css` — futuristic Zyvraxo purple/cyan responsive visual design.
-- `script.js` — interactive chapter tabs, navigation, FX setting, YouTube player on click.
-- `assets/` — channel logo, favicon and gameplay screenshot assets supplied for the project.
-- `.nojekyll` — works around some GitHub Pages/Jekyll filename processing.
-- `GITHUB-SETUP.md` — simple Windows-friendly publication instructions.
-
-## Additional notes
-
-- The full video file **is not** included; it has not been supplied to the website package. Your local OBS original remains on your computer.
-- Video duration is rounded to 18:32 from the original 18:32.12 recording.
-- No personal address, real name, or unrelated business information appears on the site.
-- After publishing, update direct TikTok post URLs in `index.html` and optionally improve `chapters` in `script.js` to link each published entry individually.
-- The site is independent of Bolgsvenia Global and is not affiliated with Epic Games, TikTok or YouTube.
+All images are Zyvraxo-branded or taken from gameplay recordings provided by the site owner. No new AI-generated fake Fortnite screenshots were used.
