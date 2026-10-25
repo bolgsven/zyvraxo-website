@@ -53,3 +53,43 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{text-wrap:balance}button:disabled{cursor:not-al
 @keyframes float{from{transform:translateY(4px) rotate(-.8deg)}to{transform:translateY(-10px) rotate(.8deg)}}@keyframes aura{from{transform:scale(.94);opacity:.76}to{transform:scale(1.06);opacity:1}}@keyframes ticker{to{transform:translateX(-50%)}}
 .effects-off .ticker-track,.effects-off .hero-logo,.effects-off .art-aura{animation:none}.effects-off .art-aura{opacity:.6}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* Four-language selector and typography: EN / ES / zh-Hans / UR (RTL) */
+.language-picker{position:relative;z-index:55;flex:0 0 auto;color:#eee4ff;font-family:var(--body)}
+.language-picker summary{list-style:none;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(192,159,247,.35);background:#20152e;min-width:66px;min-height:36px;padding:6px 9px;font-size:11px;letter-spacing:0.2px;font-weight:800;cursor:pointer;white-space:nowrap}
+.language-picker summary::-webkit-details-marker{display:none}.language-picker summary::marker{content:''}
+.language-picker summary:hover,.language-picker[open] summary{border-color:var(--violet);background:#332047}
+.language-picker .language-globe{color:var(--cyan);font-size:14px}.language-chevron{color:var(--yellow);font-size:15px}
+.language-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;background:#19132e;min-width:172px;border:1px solid #8064b1;box-shadow:0 18px 32px rgba(0,0,0,.46);padding:6px;z-index:90;display:flex;flex-direction:column;gap:3px}
+.language-list a{font-size:13px;line-height:1.55;padding:9px 12px;display:block;white-space:nowrap;color:#eae1fc;font-weight:650;letter-spacing:0;text-align:start}
+.language-list a:hover,.language-list a:focus-visible{background:#34234d;color:var(--yellow)}
+.language-list a[aria-current='page']{background:#3b2759;color:var(--yellow);border-inline-start:3px solid var(--cyan)}
+/* Chinese requires CJK fonts and readable natural script spacing */
+.lang-zh{--display:'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif;--body:'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif}
+.lang-zh .hero h1{font-size:clamp(64px,7vw,96px);line-height:1.12}.lang-zh h2,.lang-zh h3{line-height:1.2}.lang-zh .brand-name{font-family:Impact,'Arial Black',sans-serif}
+.lang-zh .hero-outline{-webkit-text-stroke:1.25px #f5f2ff}.lang-zh .ticker-track{letter-spacing:2px}.lang-zh .section-label,.lang-zh .eyebrow,.lang-zh .superhead{letter-spacing:1px}
+/* Urdu runs right to left, but images and branded wordmarks keep their orientation. */
+.lang-ur{--body:'Noto Naskh Arabic','Urdu Typesetting','Noto Sans Arabic',Tahoma,sans-serif;--display:'Noto Naskh Arabic','Urdu Typesetting','Noto Sans Arabic',Tahoma,sans-serif;font-size:17px;line-height:1.9}
+.lang-ur .brand-name,.lang-ur .footer-brand,.lang-ur .fx-toggle,.lang-ur .hero-stats strong,.lang-ur .story-photo-number,.lang-ur .gear-symbol{font-family:Impact,'Arial Black',sans-serif}
+.lang-ur h1,.lang-ur h2,.lang-ur h3{font-weight:900;letter-spacing:0;text-wrap:balance;line-height:1.28}
+.lang-ur .hero h1{font-size:clamp(54px,6.3vw,85px);line-height:1.2}.lang-ur .hero-outline{-webkit-text-stroke:1px #f5f2ff}
+.lang-ur .story-copy h2,.lang-ur .section-heading h2{font-size:clamp(42px,4.8vw,66px)}
+.lang-ur .follow-inner h2{font-size:clamp(52px,6.8vw,80px)}
+.lang-ur .match-content h3{font-size:clamp(30px,3.2vw,45px)}
+.lang-ur .series-content h3{font-size:clamp(28px,2.7vw,38px)}
+.lang-ur .story-copy p,.lang-ur .match-content p,.lang-ur .series-content p,.lang-ur .follow-inner p,.lang-ur .section-heading>p{font-size:16px;line-height:1.9}
+.lang-ur .nav a,.lang-ur .primary-nav a,.lang-ur .button,.lang-ur .match-link,.lang-ur .series-link,.lang-ur .header-follow,.lang-ur .section-label,.lang-ur .eyebrow,.lang-ur .superhead,.lang-ur .match-kicker,.lang-ur .ticker,.lang-ur .hero-stats span{letter-spacing:0;font-family:var(--body)}
+.lang-ur .primary-nav a{font-size:14px}.lang-ur .header-follow{font-size:12px}.lang-ur .button{font-size:14px;white-space:normal;line-height:1.5;min-height:50px}
+.lang-ur .section-label,.lang-ur .eyebrow,.lang-ur .match-kicker{font-size:13px}.lang-ur .hero-stats span{font-size:12px}.lang-ur .match-media-tag,.lang-ur .series-index{font-size:12px;letter-spacing:0}
+.lang-ur .hero-intro{line-height:1.8;font-size:17px}.lang-ur .story-photo-number{left:auto;right:20px}.lang-ur .story-photo-label{left:auto;right:20px}
+.lang-ur .art-stamp{right:auto;left:8px}.lang-ur .match-media-tag{left:auto;right:16px}.lang-ur .match-duration{right:auto;left:15px}
+.lang-ur .hero-stats div{border-right:0;border-left:1px solid rgba(188,160,245,.22)}.lang-ur .hero-stats div:last-child{border:0}
+.lang-ur .hero-buttons .button span,.lang-ur .follow-buttons .button span,.lang-ur .series-link span,.lang-ur .match-link span{direction:ltr;display:inline-block}
+.lang-ur .ticker-track{font-size:21px;letter-spacing:0}.lang-ur .footer-copy p{font-size:13px;line-height:1.85}
+.lang-ur .brand,.lang-ur .header-actions,.lang-ur .language-picker{direction:ltr}.lang-ur .language-list{direction:rtl}.lang-ur .hero-logo{transform:initial}
+/* Menu remains usable on small phones in all languages */
+@media(max-width:1150px){.header-inner{gap:12px}.language-picker summary{min-width:61px}}
+@media(max-width:930px){.primary-nav{direction:inherit}.language-list{min-width:165px}}
+@media(max-width:600px){.header-follow{display:none}.language-picker summary{min-width:57px;padding-inline:7px}.header-actions{gap:6px}.header-inner{gap:8px}}
+@media(max-width:490px){.lang-zh .hero h1{font-size:clamp(53px,13vw,76px)}.lang-ur .hero h1{font-size:clamp(45px,11vw,62px)}.lang-ur .story-copy h2,.lang-ur .section-heading h2{font-size:clamp(37px,9.5vw,52px)}.lang-ur .hero-intro{font-size:16px}.lang-ur .match-content h3{font-size:32px}.lang-ur .series-content h3{font-size:33px}.lang-ur .follow-inner h2{font-size:clamp(39px,10vw,56px)}}
